@@ -17,18 +17,20 @@ $(function functionName() {
   var numeriCpu = [];
   var numeriTrovati = [];
 
-
-  for (var i = 0; i < 5; i++) {
-    numeriCpu.push(generaNumeroRandom());
-    console.log(numeriCpu);
+  while (numeriCpu.length < 5 ) {
+    var numero = generaNumeroRandom();
+    if (numeriCpu.includes(numero) == false) {
+      numeriCpu.push(generaNumeroRandom());
+    }
   }
+  console.log(numeriCpu);
 
   alert("i numeri da ricordare sono: " + numeriCpu);
 
   // definisco un array dove inserire i numeri dati dall'utente per poi confrontarli con i numeri della CPU
   var sceltaUtente = [];
 
-  // dopo 3 secondi faccio comparire un prompt per inserire i numeri
+  // dopo 30 secondi faccio comparire un prompt per inserire i numeri
   var richieste = setTimeout(function () {
     // faccio un ciclo for
     for (var i = 0; i < 5; i++) {
